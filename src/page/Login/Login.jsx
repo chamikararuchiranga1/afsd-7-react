@@ -2,6 +2,8 @@ import Box from "@mui/material/Box";
 import { Button, Card, CardActions, CardContent, TextField } from "@mui/material";
 import Typography from "@mui/material/Typography";
 import { useState } from "react";
+import { Link } from "react-router-dom";
+import instance from "../../service/AxiosOrder";
 
 export default function Login() {
 
@@ -9,7 +11,19 @@ export default function Login() {
     const [pass, setPass] = useState('');
 
     function loginAction() {
-        
+        instance.post('/login', {
+            email: email,
+            password: pass
+        })
+            .then(function (response) {
+                console.log(response.data?.token)
+                localStorage.setItem('afsd-7-token',response.data?.token)
+                window.location.reload()
+            })
+            .catch(function (error) {
+                console.log(error);
+            })
+
     }
 
     return (
@@ -29,9 +43,11 @@ export default function Login() {
                             setPass(val.target.value)
                         }} fullWidth id="outlined-basic" type='password' label="Password" variant="outlined" />
                     </Box>
-                    <Typography onClick={() => { console.log('login') }} textAlign={'end'} variant="body2" color="blue">
-                        Register
-                    </Typography>
+                    <Link to={'/register'} style={{ textDecoration: 'none' }}>
+                        <Typography textAlign={'end'} variant="body2" color="blue">
+                            Register
+                        </Typography>
+                    </Link>
                 </CardContent>
                 <CardActions sx={{ display: 'flex', justifyContent: 'center' }}>
                     <Button onClick={loginAction} variant={'contained'} size="small">Login</Button>

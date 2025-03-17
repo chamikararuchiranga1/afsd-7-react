@@ -2,8 +2,11 @@ import { Button, Card, CardActions, CardContent, TextField } from "@mui/material
 import Typography from "@mui/material/Typography";
 import Box from "@mui/material/Box";
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 export default function Register () {
+
+    const navigate = useNavigate()
 
     const [name, setName] = useState('');
     const [email, setEmail] = useState('');
@@ -56,12 +59,12 @@ export default function Register () {
                         />
                     </Box>
                     <Typography
-                        onClick={() => { navigate('/login') }}
+                        onClick={() => { navigate('/login')}}
                         textAlign={'end'}
                         variant="body2"
                         color="blue"
                     >
-                        login
+                        go to login
                     </Typography>
                 </CardContent>
                 <CardActions sx={{ display: 'flex', justifyContent: 'center' }}>
