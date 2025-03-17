@@ -1,0 +1,17 @@
+.btn {
+    background-color: red;
+    border: none;
+    margin: 5px;
+    padding: 10px;
+    border-radius: 10px;
+    color: white;
+    
+}
+
+.outlineBtn {
+    padding: 10px;
+    background-color: white;
+    border: 2px solid red;
+    border-radius: 5px;
+    color: red;
+}

@@ -1,0 +1,15 @@
+.card {
+    width: 350px;
+    border: 2px solid rgb(127, 127, 127);
+    background-color: rgb(202, 201, 201);
+    border-radius: 10px;
+    padding: 10px;
+}
+
+.footer {
+    background-color: rgb(85, 61, 61);
+    color: white;
+    padding: 10px;
+    border-radius: 10px;
+    text-align: center;
+}
