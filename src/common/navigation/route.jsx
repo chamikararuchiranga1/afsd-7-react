@@ -20,7 +20,7 @@ const route = [
         component: <AxiosPage/>
     },
     {
-        name: 'ACPT',
+        name: 'acpt',
         path: '/acpt',
         component: <ACPT/>
     }
