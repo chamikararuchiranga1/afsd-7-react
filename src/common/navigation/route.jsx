@@ -1,3 +1,4 @@
+import ACPT from "../../page/ACPT/ACPT";
 import AxiosPage from "../../page/AxiosPage/AxiosPage";
 import Home from "../../page/Home/Home";
 import Mui from "../../page/Mui/Mui";
@@ -17,6 +18,11 @@ const route = [
         name: 'Axios Page',
         path: '/axios-page',
         component: <AxiosPage/>
+    },
+    {
+        name: 'ACPT',
+        path: '/acpt',
+        component: <ACPT/>
     }
 ];
 
